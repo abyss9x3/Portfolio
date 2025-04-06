@@ -3,6 +3,9 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import Model from '@components/Model';
+import Lottie from 'lottie-react';
+import heroAnimation from '../../assets/hero.json'; // ✅ fixed relative path
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -11,6 +14,9 @@ const StyledHeroSection = styled.section`
   min-height: 100vh;
   height: 100vh;
   padding: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
@@ -44,6 +50,23 @@ const StyledHeroSection = styled.section`
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
   }
+
+  & > *:not(canvas):not(.lottie-bg) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .lottie-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.25; /* adjust to your liking */
+    pointer-events: none; /* ensures no click interference */
+    transform: scale(0.85);
+  }
 `;
 
 const Hero = () => {
@@ -51,9 +74,7 @@ const Hero = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
+    if (prefersReducedMotion) return;
 
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
@@ -63,12 +84,10 @@ const Hero = () => {
   const two = <h2 className="big-heading">Aditya Sharma</h2>;
   const three = <h3 className="big-heading">I build things for the web.</h3>;
   const four = (
-    <>
-      <p>
-        I am a software engineer. I build full-stack applications, and turn cloud architectures into
-        scalable solutions
-      </p>
-    </>
+    <p>
+      I am a software engineer. I build full-stack applications, and turn cloud architectures into
+      scalable solutions
+    </p>
   );
   const five = (
     <a
@@ -84,6 +103,16 @@ const Hero = () => {
 
   return (
     <StyledHeroSection>
+      {/* 🔥 Lottie background animation */}
+      {!prefersReducedMotion && (
+        <div className="lottie-bg">
+          <Lottie animationData={heroAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />
+        </div>
+      )}
+
+      {/* Optional 3D model */}
+      {/* <Model /> */}
+
       {prefersReducedMotion ? (
         <>
           {items.map((item, i) => (
