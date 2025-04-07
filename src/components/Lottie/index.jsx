@@ -28,7 +28,7 @@ export const WhatIDoAnimation = () => <LottieWrapper options={{
 }} />;
 
 export const Animation = () => <LottieWrapper options={{
-  animationData: AnimationData,
+  animationData: FullStackAnimationData,
   loop: true,
   autoplay: true,
 }} />;
