@@ -3,8 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
-//import Model from '@components/Model'; TODO: LATER
-import heroAnimation from '../../assets/Hero.json';
+import { HeroAnimation } from '../Lottie';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -70,26 +69,19 @@ const StyledHeroSection = styled.section`
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [LottieComponent, setLottieComponent] = useState(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) {return;}
+    if (prefersReducedMotion) {
+      return;
+    }
 
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
 
-  useEffect(() => {
-    if (!prefersReducedMotion) {
-      import('lottie-react').then(module => {
-        setLottieComponent(() => module.default);
-      });
-    }
-  }, [prefersReducedMotion]);
-
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Aditya Sharma</h2>;
+  const two = <h2 className="big-heading">Nakhun Chuski</h2>;
   const three = <h3 className="big-heading">I build things for the web.</h3>;
   const four = (
     <p>
@@ -111,20 +103,9 @@ const Hero = () => {
 
   return (
     <StyledHeroSection>
-      {/* ✅ Lottie animation loaded only on client */}
-      {!prefersReducedMotion && LottieComponent && (
-        <div className="lottie-bg">
-          <LottieComponent
-            animationData={heroAnimation}
-            loop
-            autoplay
-            style={{ width: '100%', height: '100%' }}
-          />
-        </div>
-      )}
-
-      {/* Optional 3D model */}
-      {/* <Model /> */}
+      <div className="lottie-bg">
+        <HeroAnimation />
+      </div>
 
       {prefersReducedMotion ? (
         <>

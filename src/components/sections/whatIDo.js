@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
-
-import LottieWrapper from '../LottieWrapper'; // make sure path is correct
+import { WhatIDoAnimation } from '../Lottie';
 
 const config = require('@config');
 const { skillsSection } = config;
@@ -80,9 +78,7 @@ const WhatIDo = () => {
 
   return (
     <StyledWhatIDo id="what-i-do" ref={revealContainer}>
-      <div className="image-container" aria-hidden="true">
-        <LottieWrapper />
-      </div>
+      <WhatIDoAnimation />
       <div className="skills-container">
         <h2 className="numbered-heading">{skillsSection.title}</h2>
         {skillsSection.skills.map(skill => (

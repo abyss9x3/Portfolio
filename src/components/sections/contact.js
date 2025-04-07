@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
-import LottieWrapper from '@components/LottieWrapper'; // ✅ Use your custom wrapper
+import { ContactAnimation } from '../Lottie';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -69,7 +69,7 @@ const Contact = () => {
       </p>
 
       <div className="lottie-container">
-        <LottieWrapper />
+        <ContactAnimation />
       </div>
 
       <a className="email-link" href={`mailto:${email}`}>

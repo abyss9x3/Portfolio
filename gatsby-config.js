@@ -2,10 +2,10 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Aditya Sharma',
+    title: 'Nakhun Chuski',
     description:
-      'Aditya Sharma is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://AdityaSharma.com',
+      'Nakhun Chuski is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
+    siteUrl: 'https://NakhunChuski.com',
     image: '/og.png',
     twitterUsername: '@asharmaa011',
   },
@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Aditya Sharma',
-        short_name: 'Aditya Sharma',
+        name: 'Nakhun Chuski',
+        short_name: 'Nakhun Chuski',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
@@ -116,7 +116,6 @@ module.exports = {
       },
     },
 
-    // ✅ REPLACED deprecated `gatsby-plugin-google-analytics` with `gatsby-plugin-gtag`
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
@@ -126,4 +125,8 @@ module.exports = {
       },
     },
   ],
+
+  flags: {
+    DEV_SSR: true,
+  },
 };

@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
-import animationData from '../../assets/Hero.json';
+import { AboutAnimation } from '../Lottie';
 
 const StyledHeroSection = styled.section`
   display: flex;
@@ -43,33 +43,26 @@ const StyledHeroSection = styled.section`
 const Hero = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const [Lottie, setLottie] = useState(null);
 
   useEffect(() => {
     if (!prefersReducedMotion) {
       sr.reveal(revealContainer.current, srConfig());
-    }
-
-    // Dynamically import lottie-react only on client side
-    if (typeof window !== 'undefined') {
-      import('lottie-react').then(module => {
-        setLottie(() => module.default);
-      });
     }
   }, []);
 
   return (
     <StyledHeroSection id="hero" ref={revealContainer}>
       <div className="text">
-        <h1>Hello, I'm Aditya Sharma</h1>
+        <h1>Hello, I'm Nakhun Chuski</h1>
         <h2>Full Stack Developer</h2>
         <p>
           I build performant and scalable web applications. Passionate about solving real-world
           problems with code.
         </p>
       </div>
+
       <div className="lottie-container">
-        {Lottie && <Lottie animationData={animationData} loop autoplay />}
+        <AboutAnimation />
       </div>
     </StyledHeroSection>
   );
