@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'; // ✅ Added useState
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
-import Lottie from 'lottie-react'; // ✅ Added Lottie import
-import animationData from '../../assets/ContactAnimation.json'; // ✅ Your animation file
+
+import ContactLottie from '../../assets/ContactAnimation.json'; // Make sure path is correct
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -38,7 +38,7 @@ const StyledContactSection = styled.section`
   }
 
   .lottie-container {
-    max-width: 300px; /* ✅ New class for styling Lottie */
+    max-width: 300px;
     margin: 30px auto;
   }
 
@@ -51,16 +51,11 @@ const StyledContactSection = styled.section`
 const Contact = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const [isClient, setIsClient] = useState(false); // ✅ Add state for client-side rendering
 
   useEffect(() => {
-    setIsClient(true); // ✅ Set after mount to avoid hydration issues
-
-    if (prefersReducedMotion) {
-      return;
+    if (!prefersReducedMotion) {
+      sr.reveal(revealContainer.current, srConfig());
     }
-
-    sr.reveal(revealContainer.current, srConfig());
   }, []);
 
   return (
@@ -75,12 +70,7 @@ const Contact = () => {
         you!
       </p>
 
-      {/* ✅ Added Lottie animation before the Say Hello button */}
-      {isClient && (
-        <div className="lottie-container">
-          <Lottie animationData={animationData} loop={true} />
-        </div>
-      )}
+      <ContactLottie />
 
       <a className="email-link" href={`mailto:${email}`}>
         Say Hello

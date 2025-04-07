@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import Lottie from 'lottie-react';
-import animationData from '../../assets/Animation.json';
 
-import { srConfig } from '@config';        // ✅ ScrollReveal config
-import sr from '@utils/sr';               // ✅ ScrollReveal utility
-import { usePrefersReducedMotion } from '@hooks'; // ✅ Accessibility hook
+import { srConfig } from '@config';
+import sr from '@utils/sr';
+import { usePrefersReducedMotion } from '@hooks';
+
+import LottieWrapper from '../LottieWrapper'; // make sure path is correct
 
 const config = require('@config');
 const { skillsSection } = config;
@@ -69,19 +69,19 @@ const StyledWhatIDo = styled.section`
 `;
 
 const WhatIDo = () => {
-  const revealContainer = useRef(null); // ✅ Ref for ScrollReveal
-  const prefersReducedMotion = usePrefersReducedMotion(); // ✅ Avoid animation for motion-sensitive users
+  const revealContainer = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
-
-    sr.reveal(revealContainer.current, srConfig()); // ✅ Trigger fade-in scroll animation
+    if (!prefersReducedMotion) {
+      sr.reveal(revealContainer.current, srConfig());
+    }
   }, []);
 
   return (
-    <StyledWhatIDo id="what-i-do" ref={revealContainer}> {/* ✅ Fade-in triggered via sr */}
-      <div className="image-container">
-        <Lottie animationData={animationData} className="lottie-animation" />
+    <StyledWhatIDo id="what-i-do" ref={revealContainer}>
+      <div className="image-container" aria-hidden="true">
+        <LottieWrapper />
       </div>
       <div className="skills-container">
         <h2 className="numbered-heading">{skillsSection.title}</h2>

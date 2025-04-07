@@ -51,6 +51,19 @@ const StyledPostContent = styled.div`
 `;
 
 const PostTemplate = ({ data, location }) => {
+  // ✅ Graceful fallback if no data is found
+  if (!data?.markdownRemark) {
+    return (
+      <Layout location={location}>
+        <StyledPostContainer>
+          <h1>404 - Post Not Found</h1>
+          <p>Sorry, we couldn’t find this memory.</p>
+          <Link to="/pensieve">Go back</Link>
+        </StyledPostContainer>
+      </Layout>
+    );
+  }
+
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
 

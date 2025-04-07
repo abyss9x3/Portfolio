@@ -3,9 +3,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
-import Model from '@components/Model';
-import Lottie from 'lottie-react';
-import heroAnimation from '../../assets/hero.json'; // ✅ fixed relative path
+//import Model from '@components/Model'; TODO: LATER
+import heroAnimation from '../../assets/Hero.json';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -63,22 +62,31 @@ const StyledHeroSection = styled.section`
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.25; /* adjust to your liking */
-    pointer-events: none; /* ensures no click interference */
+    opacity: 0.25;
+    pointer-events: none;
     transform: scale(0.85);
   }
 `;
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const [LottieComponent, setLottieComponent] = useState(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion) {return;}
 
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    if (!prefersReducedMotion) {
+      import('lottie-react').then(module => {
+        setLottieComponent(() => module.default);
+      });
+    }
+  }, [prefersReducedMotion]);
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Aditya Sharma</h2>;
@@ -103,10 +111,15 @@ const Hero = () => {
 
   return (
     <StyledHeroSection>
-      {/* 🔥 Lottie background animation */}
-      {!prefersReducedMotion && (
+      {/* ✅ Lottie animation loaded only on client */}
+      {!prefersReducedMotion && LottieComponent && (
         <div className="lottie-bg">
-          <Lottie animationData={heroAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />
+          <LottieComponent
+            animationData={heroAnimation}
+            loop
+            autoplay
+            style={{ width: '100%', height: '100%' }}
+          />
         </div>
       )}
 
