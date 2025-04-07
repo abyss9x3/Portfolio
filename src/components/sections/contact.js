@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import LottieWrapper from '@components/LottieWrapper'; // ✅ Use your custom wrapper
 
-import ContactLottie from '../../assets/ContactAnimation.json'; // Make sure path is correct
-
-const StyledContactSection = styled.section
+const StyledContactSection = styled.section`
   max-width: 600px;
   margin: 0 auto 100px;
   text-align: center;
@@ -46,7 +45,7 @@ const StyledContactSection = styled.section
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
   }
-;
+`;
 
 const Contact = () => {
   const revealContainer = useRef(null);
@@ -56,12 +55,11 @@ const Contact = () => {
     if (!prefersReducedMotion) {
       sr.reveal(revealContainer.current, srConfig());
     }
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
       <h2 className="numbered-heading overline">What’s Next?</h2>
-
       <h2 className="title">Get In Touch</h2>
 
       <p>
@@ -70,9 +68,11 @@ const Contact = () => {
         you!
       </p>
 
-      <ContactLottie />
+      <div className="lottie-container">
+        <LottieWrapper />
+      </div>
 
-      <a className="email-link" href={mailto:${email}}>
+      <a className="email-link" href={`mailto:${email}`}>
         Say Hello
       </a>
     </StyledContactSection>
