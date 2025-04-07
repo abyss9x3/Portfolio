@@ -1,16 +1,16 @@
 import React from 'react';
 import LottieWrapper from './wrapper/LottieWrapper';
-import { AnimationData, ContactAnimationData } from '../../assets';
+import { FullStackAnimationData, ContactAnimationData, HeroAnimationData } from '../../assets';
 
 export const HeroAnimation = () => <LottieWrapper options={{
-  animationData: AnimationData,
+  animationData: HeroAnimationData,
   loop: true,
   autoplay: true,
   style: { width: '100%', height: '100%' },
 }} />;
 
 export const AboutAnimation = () => <LottieWrapper options={{
-  animationData: AnimationData,
+  animationData: HeroAnimationData,
   loop: true,
   autoplay: true,
 }} />;
@@ -22,7 +22,7 @@ export const ContactAnimation = () => <LottieWrapper options={{
 }} />;
 
 export const WhatIDoAnimation = () => <LottieWrapper options={{
-  animationData: AnimationData,
+  animationData: FullStackAnimationData,
   loop: true,
   autoplay: true,
 }} />;
