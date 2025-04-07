@@ -10,7 +10,7 @@ const { skillsSection } = config;
 
 const StyledWhatIDo = styled.section`
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* ⬅️ CHANGED: was center, now top-align side-by-side */
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1000px;
@@ -20,11 +20,13 @@ const StyledWhatIDo = styled.section`
   .image-container {
     flex: 1;
     text-align: center;
+    order: 1; /* ⬅️ NEW: sets animation to left on larger screens */
   }
 
   .lottie-animation {
     max-width: 400px;
     width: 100%;
+    margin: 0 auto; /* ⬅️ NEW: centers animation */
   }
 
   .skills-container {
@@ -32,6 +34,7 @@ const StyledWhatIDo = styled.section`
     display: flex;
     flex-direction: column;
     gap: 15px;
+    order: 2; /* ⬅️ NEW: sets skills to right */
   }
 
   .skill-card {
@@ -54,14 +57,19 @@ const StyledWhatIDo = styled.section`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: column; /* ⬅️ Ensures vertical stacking on smaller screens */
 
     .image-container {
-      order: 2;
+      order: 2; /* ⬅️ NEW: pushes animation after skills on small screens */
     }
 
     .skills-container {
       order: 1;
+    }
+
+    .lottie-animation {
+      max-width: 300px; /* ⬅️ Adjusts size for smaller screens */
+      margin-top: 20px;
     }
   }
 `;
@@ -78,7 +86,11 @@ const WhatIDo = () => {
 
   return (
     <StyledWhatIDo id="what-i-do" ref={revealContainer}>
-      <WhatIDoAnimation />
+      {/* ⬇️ NEW: Wrapped animation in a container div for layout control */}
+      <div className="image-container">
+        <WhatIDoAnimation className="lottie-animation" />
+      </div>
+
       <div className="skills-container">
         <h2 className="numbered-heading">{skillsSection.title}</h2>
         {skillsSection.skills.map(skill => (
