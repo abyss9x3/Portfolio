@@ -2,10 +2,10 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Nakhun Chuski',
+    title: 'Aditya Sharma',
     description:
-      'Nakhun Chuski is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://NakhunChuski.com',
+      'Aditya Sharma is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
+    siteUrl: 'https://yet to decide.com',
     image: '/og.png',
     twitterUsername: '@asharmaa011',
   },
@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Nakhun Chuski',
-        short_name: 'Nakhun Chuski',
+        name: 'Aditya Sharma',
+        short_name: 'Aditya Sharma',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
