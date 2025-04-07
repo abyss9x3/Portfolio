@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
-import Lottie from 'lottie-react'; // Import the Lottie component
-import ContactLottieAnimation from '../../assets/ContactAnimation.json'; // Lottie JSON data
 
-const StyledContactSection = styled.section`
+import ContactLottie from '../../assets/ContactAnimation.json'; // Make sure path is correct
+
+const StyledContactSection = styled.section
   max-width: 600px;
   margin: 0 auto 100px;
   text-align: center;
@@ -46,7 +46,7 @@ const StyledContactSection = styled.section`
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
   }
-`;
+;
 
 const Contact = () => {
   const revealContainer = useRef(null);
@@ -61,18 +61,18 @@ const Contact = () => {
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
       <h2 className="numbered-heading overline">What’s Next?</h2>
+
       <h2 className="title">Get In Touch</h2>
+
       <p>
         I'm currently exploring new opportunities and open to connecting! If you have a role that
         aligns with my skills or just want to chat, feel free to reach out—I’d love to hear from
         you!
       </p>
 
-      <div className="lottie-container">
-        <Lottie animationData={ContactLottieAnimation} loop={true} />
-      </div>
+      <ContactLottie />
 
-      <a className="email-link" href={`mailto:${email}`}>
+      <a className="email-link" href={mailto:${email}}>
         Say Hello
       </a>
     </StyledContactSection>
