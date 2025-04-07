@@ -22,7 +22,7 @@ export const ContactAnimation = () => <LottieWrapper options={{
 }} />;
 
 export const WhatIDoAnimation = () => <LottieWrapper options={{
-  animationData: HeroAnimationData,
+  animationData: AnimationData,
   loop: true,
   autoplay: true,
 }} />;
