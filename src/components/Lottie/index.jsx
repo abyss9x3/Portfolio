@@ -1,16 +1,16 @@
 import React from 'react';
 import LottieWrapper from './wrapper/LottieWrapper';
-import { AnimationData, ContactAnimationData, HeroAnimationData } from '../../assets';
+import { AnimationData, ContactAnimationData } from '../../assets';
 
 export const HeroAnimation = () => <LottieWrapper options={{
-  animationData: HeroAnimationData,
+  animationData: AnimationData,
   loop: true,
   autoplay: true,
   style: { width: '100%', height: '100%' },
 }} />;
 
 export const AboutAnimation = () => <LottieWrapper options={{
-  animationData: HeroAnimationData,
+  animationData: AnimationData,
   loop: true,
   autoplay: true,
 }} />;
