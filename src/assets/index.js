@@ -1,5 +1,5 @@
 import HeroAnimationData from './Hero.json';
-import AnimationData from './Animation.json';
+import FullStackAnimationData from './FullStackAnimation.json';
 import ContactAnimationData from './ContactAnimation.json';
 
-export { HeroAnimationData, AnimationData, ContactAnimationData };
+export { HeroAnimationData, FullStackAnimationData, ContactAnimationData };
