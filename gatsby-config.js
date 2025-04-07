@@ -5,7 +5,7 @@ module.exports = {
     title: 'Aditya Sharma',
     description:
       'Aditya Sharma is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://yet to decide.com',
+    siteUrl: 'https://AdityaSharma.com',
     image: '/og.png',
     twitterUsername: '@asharmaa011',
   },
