@@ -50,7 +50,7 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
-      <CursorEffect /> {/* ✅ Cursor Effect Always Active */}
+      <CursorEffect /> ✅ Cursor Effect Always Active
       <Head />
       <div id="root">
         <ThemeProvider theme={theme}>
