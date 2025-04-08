@@ -1,9 +1,9 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "personal-website",
+  "description": "Personal Website",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
-  "repository": "https://github.com/bchiang7/v4",
+  "author": "Aditya Sharma <abyss9x3@gmail.com>",
+  "repository": "https://github.com/abyss9x3/portfolio",
   "keywords": [
     "gatsby"
   ],
