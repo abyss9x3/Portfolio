@@ -42,6 +42,10 @@ module.exports = {
       url: '/#projects',
     },
     {
+      name: 'Social Respponsibilities',
+      url: '/#social-responsibilities',
+    },
+    {
       name: 'Contact',
       url: '/#contact',
     },
