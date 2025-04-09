@@ -3,6 +3,7 @@ date: '20-05-14'
 title: 'Google Cloud Ready Facilitator'
 company: 'Google Cloud India'
 location: ''
+priority: 2
 range: 'March 2022 - June 2022'
 url: ''
 ---
