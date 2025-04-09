@@ -7,12 +7,21 @@ const CursorEffect = () => {
     cursor.classList.add('custom-cursor');
     document.body.appendChild(cursor);
 
+    let mouseX = 0;
+    let mouseY = 0;
+
     const moveCursor = e => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
+    const updatePosition = () => {
+      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(updatePosition);
     };
 
     window.addEventListener('mousemove', moveCursor);
+    requestAnimationFrame(updatePosition);
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);

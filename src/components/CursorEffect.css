@@ -6,10 +6,10 @@
   height: 120px;
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 1; /* stays behind most UI */
+  z-index: 1;
 
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.15) 40%, transparent 80%);
-  filter: blur(8px);
-  mix-blend-mode: multiply; /* optional: makes it blend with bg */
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 40%, transparent 80%);
+  filter: blur(10px);
+  mix-blend-mode: multiply;
+  will-change: transform;
 }
