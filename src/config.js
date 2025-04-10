@@ -42,7 +42,7 @@ module.exports = {
       url: '/#projects',
     },
     {
-      name: 'Social Respponsibilities',
+      name: 'Social Work',
       url: '/#social-responsibilities',
     },
     {
