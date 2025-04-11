@@ -3,7 +3,7 @@ date: '3'
 title: 'Font4i'
 cover: './Font4i.png'
 github: 'https://github.com/abyss9x3/FONT_4i'
-external: 'https://spotify-profile.herokuapp.com/'
+external: 'https://github.com/abyss9x3/FONT_4i'
 tech:
   - Microsoft Azure API |
   - Javascript

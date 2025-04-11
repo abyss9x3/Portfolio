@@ -3,7 +3,7 @@ date: '2'
 title: 'Exam Module'
 cover: './course-card.png'
 external: 'https://github.com/abyss9x3'
-cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
+cta: 'https://github.com/abyss9x3'
 tech:
   - Seamless Examiner Allocation |
   - React |

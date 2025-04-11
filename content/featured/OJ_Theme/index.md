@@ -3,7 +3,7 @@ date: '1'
 title: 'Online Judge'
 cover: './OJ.png'
 github: 'https://github.com/abyss9x3/Online-Judge'
-external: 'https://halcyon-theme.netlify.com/'
+external: 'https://github.com/abyss9x3/Online-Judge/'
 tech:
   - Real-Time Code Execution |
   - MERN |
