@@ -16,7 +16,7 @@ module.exports = {
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com',
+      url: 'https://www.linkedin.com/in/aditya-sharma-12957a237/',
     },
     {
       name: 'Codepen',
