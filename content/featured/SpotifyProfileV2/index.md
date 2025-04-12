@@ -2,8 +2,8 @@
 date: '2'
 title: 'Exam Module'
 cover: './course-card.png'
-external: 'https://github.com/abyss9x3'
-cta: 'https://github.com/abyss9x3'
+external: 'https://github.com/abyss9x3/Exam-Module-2'
+cta: 'https://github.com/abyss9x3/Exam-Module-2'
 tech:
   - Seamless Examiner Allocation |
   - React |
