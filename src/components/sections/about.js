@@ -161,24 +161,26 @@ const About = () => {
           <StyledText>
             <div>
               <p>
-                Hey there! I'm Aditya Sharma, a developer who loves turning caffeine into code and
-                bugs into features. My interest in development started back during covid 2020...
+                Hello! I'm Aditya Sharma, a software developer passionate about transforming ideas
+                into scalable, high-performance solutions. My journey in development began during
+                the early days of the COVID-19 pandemic in 2020, and since then, I've been committed
+                to continuous learning and impactful problem-solving.
               </p>
 
               <p>
-                In 2022, I had the incredible opportunity to work with Microsoft as an Engage
-                Mentee, where we were given multiple pathways among which we had to build an
-                application solving a problem for the mass...
+                In 2022, I had the privilege of working with Microsoft as an Engage Mentee. During
+                the program, I explored multiple development pathways and built an application aimed
+                at addressing real-world challenges at scale.
               </p>
 
               <p>
-                Fast forward to today, I’ve built high-performance platforms, including an Online
-                Judge system... and a faculty allocation system...
+                Since then, I’ve developed robust platforms, including a full-stack coding program
+                and an in-campus problem-solving portal—specifically, a streamlined faculty
+                allocation system designed to automate exam assignment processes.
               </p>
-
               <p>
-                Recently, I completed a course on AWS Cloud Solutions, reinforcing my ability to
-                architect scalable, cloud-first applications...
+                Most recently, I completed a specialized course on AWS Cloud Solutions, further
+                strengthening my ability to design and deploy cloud-native architectures.
               </p>
 
               <p>Here are a few technologies I’ve been working with recently:</p>
