@@ -108,18 +108,7 @@ const Footer = () => {
         <a href="https://github.com/abyss9x3">
           <div>Designed &amp; Built by Aditya Sharma</div>
 
-          {githubInfo.stars && githubInfo.forks && (
-            <div className="github-stats">
-              <span>
-                <Icon name="Star" />
-                <span>{githubInfo.stars.toLocaleString()}</span>
-              </span>
-              <span>
-                <Icon name="Fork" />
-                <span>{githubInfo.forks.toLocaleString()}</span>
-              </span>
-            </div>
-          )}
+          
         </a>
       </StyledCredit>
     </StyledFooter>
