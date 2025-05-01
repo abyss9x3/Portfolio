@@ -126,7 +126,7 @@ const Hero = () => {
   const five = (
     <a
       className="email-link"
-      href="https://drive.google.com/file/d/17lujsv-mOBYDsBB6vSeW9xv26fmpWPCV/view?usp=sharing"
+      href="https://drive.google.com/file/d/1pd2OznOY_U6woUzHBZ7wroyFjpMuOI6n/view?usp=sharing"
       target="_blank"
       rel="noreferrer">
       Check out my Resume!
