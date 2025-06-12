@@ -1,8 +1,8 @@
 ---
-date: '20-05-14'
-title: ''
+date: '25-04-01'
+title: 'Software Engineering Intern (remote)'
 company: 'JP Morgan Chase & Co.'
-location: 'Software Engineering Intern (remote)'
+location: 'remote'
 priority: 1
 range: 'Apr 2025 - May 2025'
 url: ''
