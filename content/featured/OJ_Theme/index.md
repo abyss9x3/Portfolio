@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2'
 title: 'Online Judge'
 cover: './OJ.png'
 github: 'https://github.com/abyss9x3/Online-Judge'
