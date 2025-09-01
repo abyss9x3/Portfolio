@@ -64,7 +64,7 @@ const PostTemplate = ({ data, location }) => {
   }
 
   const { frontmatter, html } = data.markdownRemark;
-  const { title, date, tags } = frontmatter;
+  const { title, date, tags, cover } = frontmatter;
 
   return (
     <Layout location={location}>
@@ -95,6 +95,10 @@ const PostTemplate = ({ data, location }) => {
                 </Link>
               ))}
           </p>
+          {/* ✅ Use plain <img> if cover exists */}
+          {cover && (
+            <img src={cover} alt={title} style={{ marginTop: '2rem', borderRadius: '8px' }} />
+          )}
         </StyledPostHeader>
 
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
@@ -120,6 +124,7 @@ export const pageQuery = graphql`
         date
         slug
         tags
+        cover
       }
     }
   }
