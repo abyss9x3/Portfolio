@@ -114,6 +114,9 @@ TagTemplate.propTypes = {
           node: PropTypes.shape({
             frontmatter: PropTypes.shape({
               title: PropTypes.string.isRequired,
+              slug: PropTypes.string.isRequired,
+              date: PropTypes.string.isRequired,
+              tags: PropTypes.arrayOf(PropTypes.string),
             }),
           }),
         }).isRequired,

@@ -95,9 +95,13 @@ const PostTemplate = ({ data, location }) => {
                 </Link>
               ))}
           </p>
-          {/* ✅ Use plain <img> if cover exists */}
+          {/* ✅ Just render <img> if cover exists */}
           {cover && (
-            <img src={cover} alt={title} style={{ marginTop: '2rem', borderRadius: '8px' }} />
+            <img
+              src={cover}
+              alt={title}
+              style={{ marginTop: '2rem', borderRadius: '8px', maxWidth: '100%' }}
+            />
           )}
         </StyledPostHeader>
 
