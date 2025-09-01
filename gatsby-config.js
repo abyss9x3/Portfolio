@@ -29,10 +29,10 @@ module.exports = {
         icon: 'src/images/logo.png',
       },
     },
-    // You can enable this only if you really need offline capabilities (PWA)
-    // Be cautious as it's tricky to debug stale pages during dev
+    // Enable PWA support (optional)
     `gatsby-plugin-offline`,
 
+    // File sources
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -62,6 +62,7 @@ module.exports = {
       },
     },
 
+    // Markdown transformer
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -77,8 +78,9 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 700,
-              linkImagesToOriginal: true,
               quality: 90,
+              withWebp: true,
+              linkImagesToOriginal: false,
               tracedSVG: { color: config.colors.green },
             },
           },
@@ -116,6 +118,7 @@ module.exports = {
       },
     },
 
+    // Analytics
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
