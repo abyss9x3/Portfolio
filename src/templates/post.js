@@ -4,7 +4,6 @@ import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Layout } from '@components';
 
 const StyledPostContainer = styled.main`
@@ -65,9 +64,7 @@ const PostTemplate = ({ data, location }) => {
   }
 
   const { frontmatter, html } = data.markdownRemark;
-  const { title, date, tags, cover } = frontmatter;
-
-  const coverImage = getImage(cover);
+  const { title, date, tags } = frontmatter;
 
   return (
     <Layout location={location}>
@@ -98,10 +95,6 @@ const PostTemplate = ({ data, location }) => {
                 </Link>
               ))}
           </p>
-          {/* ✅ Render cover image if available */}
-          {coverImage && (
-            <GatsbyImage image={coverImage} alt={title} style={{ marginTop: '2rem' }} />
-          )}
         </StyledPostHeader>
 
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
@@ -127,11 +120,6 @@ export const pageQuery = graphql`
         date
         slug
         tags
-        cover {
-          childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, width: 1000)
-          }
-        }
       }
     }
   }
