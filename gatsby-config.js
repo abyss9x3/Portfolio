@@ -29,7 +29,7 @@ module.exports = {
         icon: 'src/images/logo.png',
       },
     },
-    // Enable PWA support (optional)
+    // Enable PWA support
     `gatsby-plugin-offline`,
 
     // File sources
@@ -67,11 +67,11 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          // 👇 this plugin makes relative paths in frontmatter (like cover: './Font4i.png') work
           {
-            resolve: 'gatsby-remark-external-links',
+            resolve: `gatsby-remark-relative-images-v2`,
             options: {
-              target: '_blank',
-              rel: 'nofollow noopener noreferrer',
+              staticFolderName: 'static', // optional
             },
           },
           {
@@ -82,6 +82,13 @@ module.exports = {
               withWebp: true,
               linkImagesToOriginal: false,
               tracedSVG: { color: config.colors.green },
+            },
+          },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
             },
           },
           {
